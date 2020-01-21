@@ -1,15 +1,18 @@
 import React from 'react';
 import Header from '../Header';
 import Background from '../Background';
-import Packages from '../../pages/Packages';
+import Packages from '../../Pages/Packages';
 import Footer from '../Footer';
+import Container from '../Container';
 
 const App = () => (
   <div>
     <Header />
     <Background />
     <main>
-      <Packages />
+      <Container>
+        <Packages />
+      </Container>
     </main>
     <Footer />
   </div>
