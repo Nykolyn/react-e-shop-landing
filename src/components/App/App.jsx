@@ -1,11 +1,17 @@
 import React from 'react';
-import { Switch, Redirect } from 'react-router-dom';
+import Header from '../Header';
+import Background from '../Background';
+import Packages from '../../pages/Packages';
+import Footer from '../Footer';
 
 const App = () => (
   <div>
-    <Switch>
-      <Redirect exact from="*" to="/" />
-    </Switch>
+    <Header />
+    <Background />
+    <main>
+      <Packages />
+    </main>
+    <Footer />
   </div>
 );
 
