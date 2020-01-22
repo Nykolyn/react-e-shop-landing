@@ -21,7 +21,6 @@ const loading = (state = false, { type }) => {
 const data = (state = [], { type, payload }) => {
   switch (type) {
     case PackagesActions.GET_PACKAGES_SUCCESS:
-      console.log(payload);
       return payload.data;
 
     default:

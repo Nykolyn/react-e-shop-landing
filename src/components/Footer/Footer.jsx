@@ -1,10 +1,12 @@
 import React from 'react';
 import { Typography, Button } from 'antd';
 import styled from 'styled-components';
+
 import Box from '../shared/Box';
 import Container from '../Container';
+import footerLogo from '../../assets/footer-logo.png';
 
-const { Title, Text } = Typography;
+const { Text } = Typography;
 
 const socials = [
   'facebook',
@@ -23,7 +25,7 @@ const Footer = () => (
     <Container>
       <Box display="flex" justifyContent="space-between">
         <Box>
-          <Title level={2}>ZAIN</Title>
+          <FooterLogo src={footerLogo} alt="Zain logo" />
           <Box mb="1em">
             <a href="#">
               <Text>Terms</Text>
@@ -51,6 +53,10 @@ const Footer = () => (
     </Container>
   </Foter>
 );
+
+const FooterLogo = styled.img`
+  height: 30px;
+`;
 
 const Foter = styled.footer`
   padding: 1em 0;

@@ -222,7 +222,7 @@ export const Title = styled.h2`
   margin-bottom: ${({ mb }) => mb || '20px'};
   text-align: ${({ align }) => align || 'left'};
   font-size: ${({ fontSize }) => fontSize || '30px'};
-  font-weight: ${({ fontWeigth }) => fontWeigth || 500};
+  font-weight: ${({ fontWeight }) => fontWeight || 500};
 `;
 
 const BrandIconButton = styled.button`

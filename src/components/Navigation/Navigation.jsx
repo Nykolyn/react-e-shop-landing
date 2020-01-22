@@ -5,11 +5,12 @@ import HeaderTitle from '../Header/HeaderTitle';
 import HeaderIcon from '../Header/HeaderIcon';
 import Box from '../shared/Box';
 import DropDown from '../Header/DropDown';
+import siteLogo from '../../assets/header-logo.png';
 
 const Navigation = () => (
   <Box display="flex" justifyContent="space-between" alignItems="center">
     <Box display="flex" alignItems="center">
-      <SiteLogo>ZAIN</SiteLogo>
+      <SiteLogo src={siteLogo} />
       <StyledMenu>
         <DropDown dropDown={['option 1', 'option 2']}>Devices</DropDown>
         <DropDown dropDown={['option 1', 'option 2']}>Mobiles</DropDown>
@@ -24,9 +25,9 @@ const Navigation = () => (
   </Box>
 );
 
-const SiteLogo = styled(HeaderTitle)`
-  margin-right: 1em;
-  font-size: 40px;
+const SiteLogo = styled.img`
+  margin-right: 4em;
+  padding-bottom: 4px;
 `;
 
 const StyledMenu = styled.ul`

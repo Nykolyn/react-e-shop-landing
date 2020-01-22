@@ -9,17 +9,19 @@ import DropDown from './DropDown';
 import StyledIcon from './HeaderIcon';
 import HeaderTitle from './HeaderTitle';
 
-const StyledOption = styled(Select.Option)`
-  min-width: 60px;
+const { Option } = Select;
+
+const StyledSelect = styled(Select)`
+  min-width: 80px;
   text-align: center;
 `;
 
 const selectBefore = (
-  <Select defaultValue="All">
-    <StyledOption value="All">All</StyledOption>
-    <StyledOption value="option 1">Option 1</StyledOption>
-    <StyledOption value="option 2">Option 2</StyledOption>
-  </Select>
+  <StyledSelect defaultValue="All">
+    <Option value="All">All</Option>
+    <Option value="option 1">Option 1</Option>
+    <Option value="option 2">Option 2</Option>
+  </StyledSelect>
 );
 
 const StyledHeader = styled.header`
