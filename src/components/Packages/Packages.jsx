@@ -1,13 +1,20 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import Slider from 'react-slick';
 import { Button, Card } from 'antd';
-import { ReactSVG } from 'react-svg';
+// import { ReactSVG } from 'react-svg';
 import styled from 'styled-components';
 
-import appleIcon from '../../assets/icons/brands-and-logotypes.svg';
-import SamsungIcon from '../../assets/icons/samsung.svg';
-import HuaweiIcon from '../../assets/icons/huawei.svg';
-import OneplusIcon from '../../assets/icons/one-plus.svg';
+// import appleIcon from '../../assets/icons/brands-and-logotypes.svg';
+// import SamsungIcon from '../../assets/icons/samsung.svg';
+// import HuaweiIcon from '../../assets/icons/huawei.svg';
+// import OneplusIcon from '../../assets/icons/one-plus.svg';
+import {
+  packagesSelector,
+  loadingSelector,
+} from '../../redux/packages/selectors';
+import { getPackages } from '../../redux/packages/actions';
 import Box from '../shared/Box';
 import Container from '../Container';
 
@@ -42,6 +49,14 @@ const NextArrow = ({ onClick }) => (
   <RightIconButton onClick={onClick} shape="circle" icon="right" />
 );
 
+PrevArrow.propTypes = {
+  onClick: PropTypes.func.isRequired,
+};
+
+NextArrow.propTypes = {
+  onClick: PropTypes.func.isRequired,
+};
+
 const ButtonGroup = Button.Group;
 const sliderSettings = {
   infinite: true,
@@ -52,87 +67,71 @@ const sliderSettings = {
   prevArrow: <PrevArrow />,
 };
 
-const Packages = () => (
-  <Container width="80%">
-    <Title fontWeigth={700}>Go Packages</Title>
-    <Description>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt eveniet
-      beatae alias ducimus molestias quo doloribus, odit, fugiat dolor minima
-      dignissimos magni quos, earum optio recusandae sed maiores esse accusamus?
-      Natus sint sed officiis, voluptatem itaque autem tempora esse tempore
-      omnis ipsa totam rerum deleniti repellat distinctio impedit ut, quas
-      aliquam officia perspiciatis similique perferendis assumenda! Est quae
-      voluptatibus temporibus.
-    </Description>
-    <StyledButtonGroup>
-      <StyledButton>Go Postpaid Plans</StyledButton>
-      <StyledButton>Go Family</StyledButton>
-      <StyledButton>Go Governorates</StyledButton>
-    </StyledButtonGroup>
-    <Title>Go Postpaid Plans</Title>
-    <Description>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt eveniet
-      beatae alias ducimus molestias quo doloribus, odit, fugiat dolor minima
-      dignissimos magni quos, earum optio recusandae sed maiores esse accusamus?
-      Natus sint sed officiis, voluptatem itaque autem tempora esse tempore
-      omnis ipsa totam rerum deleniti repellat distinctio impedit ut, quas
-      aliquam officia perspiciatis similique perferendis assumenda! Est quae
-      voluptatibus temporibus.
-    </Description>
-    <Box mb="2em">
-      <Slider {...sliderSettings}>
-        <StyledCard title="Card title" bordered={false} style={{ width: 300 }}>
-          <p>Card content</p>
-          <p>Card content</p>
-          <p>Card content</p>
-        </StyledCard>{' '}
-        <StyledCard title="Card title" bordered={false} style={{ width: 300 }}>
-          <p>Card content</p>
-          <p>Card content</p>
-          <p>Card content</p>
-        </StyledCard>{' '}
-        <StyledCard title="Card title" bordered={false} style={{ width: 300 }}>
-          <p>Card content</p>
-          <p>Card content</p>
-          <p>Card content</p>
-        </StyledCard>{' '}
-        <StyledCard title="Card title" bordered={false} style={{ width: 300 }}>
-          <p>Card content</p>
-          <p>Card content</p>
-          <p>Card content</p>
-        </StyledCard>{' '}
-        <StyledCard title="Card title" bordered={false} style={{ width: 300 }}>
-          <p>Card content</p>
-          <p>Card content</p>
-          <p>Card content</p>
-        </StyledCard>{' '}
-        <StyledCard title="Card title" bordered={false} style={{ width: 300 }}>
-          <p>Card content</p>
-          <p>Card content</p>
-          <p>Card content</p>
-        </StyledCard>{' '}
-        <StyledCard title="Card title" bordered={false} style={{ width: 300 }}>
-          <p>Card content</p>
-          <p>Card content</p>
-          <p>Card content</p>
-        </StyledCard>{' '}
-        <StyledCard title="Card title" bordered={false} style={{ width: 300 }}>
-          <p>Card content</p>
-          <p>Card content</p>
-          <p>Card content</p>
-        </StyledCard>
-      </Slider>
-    </Box>
-    <Title align="center">Eligible device for this plan:</Title>
-    <IconsWrapper>
-      <BrandIconButton>All</BrandIconButton>
-      <BrandIconButton>All</BrandIconButton>
-      <BrandIconButton>All</BrandIconButton>
-      <BrandIconButton>All</BrandIconButton>
-      <BrandIconButton>All</BrandIconButton>
-    </IconsWrapper>
-  </Container>
-);
+const Packages = ({ packages, getPackages }) => {
+  let counter = 0;
+  useEffect(() => {
+    getPackages();
+  }, [getPackages]);
+  console.log(packages);
+  return (
+    <Container width="80%">
+      <Title fontWeigth={700}>Go Packages</Title>
+      <Description>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt eveniet
+        beatae alias ducimus molestias quo doloribus, odit, fugiat dolor minima
+        dignissimos magni quos, earum optio recusandae sed maiores esse
+        accusamus? Natus sint sed officiis, voluptatem itaque autem tempora esse
+        tempore omnis ipsa totam rerum deleniti repellat distinctio impedit ut,
+        quas aliquam officia perspiciatis similique perferendis assumenda! Est
+        quae voluptatibus temporibus.
+      </Description>
+      <StyledButtonGroup>
+        <StyledButton>Go Postpaid Plans</StyledButton>
+        <StyledButton>Go Family</StyledButton>
+        <StyledButton>Go Governorates</StyledButton>
+      </StyledButtonGroup>
+      <Title>Go Postpaid Plans</Title>
+      <Description>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt eveniet
+        beatae alias ducimus molestias quo doloribus, odit, fugiat dolor minima
+        dignissimos magni quos, earum optio recusandae sed maiores esse
+        accusamus? Natus sint sed officiis, voluptatem itaque autem tempora esse
+        tempore omnis ipsa totam rerum deleniti repellat distinctio impedit ut,
+        quas aliquam officia perspiciatis similique perferendis assumenda! Est
+        quae voluptatibus temporibus.
+      </Description>
+      <Box mb="2em">
+        <Slider {...sliderSettings}>
+          {packages.map(pack => (
+            <StyledCard hoverable bordered={false}>
+              <CardTitleBox>{pack.description}</CardTitleBox>
+              <p>Card content</p>
+              <p>Card content</p>
+            </StyledCard>
+          ))}
+        </Slider>
+      </Box>
+      <Title align="center">Eligible device for this plan:</Title>
+      <IconsWrapper>
+        <BrandIconButton>All</BrandIconButton>
+        <BrandIconButton>All</BrandIconButton>
+        <BrandIconButton>All</BrandIconButton>
+        <BrandIconButton>All</BrandIconButton>
+        <BrandIconButton>All</BrandIconButton>
+      </IconsWrapper>
+    </Container>
+  );
+};
+
+const StyledCard = styled(Card)`
+  border-radius: 10px;
+`;
+
+const CardTitleBox = styled(Box)`
+  background-color: #54b8e9;
+  text-align: center;
+  padding: 2em 1em;
+`;
 
 const IconsWrapper = styled(Box)`
   display: flex;
@@ -184,8 +183,22 @@ const StyledButton = styled(Button)`
   }
 `;
 
-const StyledCard = styled(Card)`
-  padding: 20px;
-`;
+Packages.defaultProps = {
+  packages: [],
+};
 
-export default Packages;
+Packages.propTypes = {
+  packages: PropTypes.arrayOf(PropTypes.object.isRequired),
+  getPackages: PropTypes.func.isRequired,
+};
+
+const mSTP = state => ({
+  packages: packagesSelector(state),
+  loading: loadingSelector(state),
+});
+
+const mDTP = {
+  getPackages,
+};
+
+export default connect(mSTP, mDTP)(Packages);

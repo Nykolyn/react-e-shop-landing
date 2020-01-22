@@ -16,6 +16,7 @@ const socials = [
   'github',
   'gitlab',
 ];
+/* eslint-disable */
 
 const Footer = () => (
   <Foter>

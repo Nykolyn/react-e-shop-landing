@@ -3,9 +3,9 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import ReduxThunk from 'redux-thunk';
 
 // Reducers
-
+import packagesReducer from './packages/reducer';
 // Redux state
-const rootReducer = combineReducers({});
+const rootReducer = combineReducers({ packages: packagesReducer });
 
 // Middlewars
 const middleware = [ReduxThunk];
