@@ -36,10 +36,10 @@ const Header = () => (
         pt="1em"
         mb="2em"
       >
-        <DropDown dropDown={['option 1', 'option 2']} width="8%" mr="2em">
+        <DropDown dropDown={['option 1', 'option 2']} width="120px" mr="2em">
           Zain Personal
         </DropDown>
-        <Box width="70%" mr="2em">
+        <Box width="60%" mr="2em">
           <Input.Search
             enterButton
             addonBefore={selectBefore}

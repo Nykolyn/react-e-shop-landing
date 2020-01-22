@@ -101,7 +101,6 @@ const Packages = ({ packages, getPackages }) => {
   useEffect(() => {
     getPackages();
   }, [getPackages]);
-  console.log(packages);
   return (
     <Container width="80%">
       <Title fontWeigth={700}>Go Packages</Title>
@@ -130,7 +129,6 @@ const Packages = ({ packages, getPackages }) => {
         quae voluptatibus temporibus.
       </Description>
       <Box mb="2em">
-        {/* eslint-disable */}
         <Slider {...sliderSettings}>
           {packages.length > 0 &&
             packages.map(pack => (
@@ -218,13 +216,13 @@ const IconsWrapper = styled(Box)`
   margin-bottom: 3em;
 `;
 
-const Title = styled.h2`
+export const Title = styled.h2`
   margin: 0;
-  color: ${({ color }) => (color ? color : '#000')};
+  color: ${({ color }) => color || '#000'};
   margin-bottom: ${({ mb }) => mb || '20px'};
   text-align: ${({ align }) => align || 'left'};
-  font-size: ${({ fontSize }) => (fontSize ? fontSize : '30px')};
-  font-weight: ${({ fontWeigth }) => (fontWeigth ? fontWeigth : 500)};
+  font-size: ${({ fontSize }) => fontSize || '30px'};
+  font-weight: ${({ fontWeigth }) => fontWeigth || 500};
 `;
 
 const BrandIconButton = styled.button`
