@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Slider from 'react-slick';
-import { Button, Card } from 'antd';
+import { Button, Typography, Icon } from 'antd';
 // import { ReactSVG } from 'react-svg';
 import styled from 'styled-components';
 
@@ -17,6 +17,8 @@ import {
 import { getPackages } from '../../redux/packages/actions';
 import Box from '../shared/Box';
 import Container from '../Container';
+
+const { Text } = Typography;
 
 const IconButton = styled(Button)`
   position: absolute;
@@ -45,16 +47,24 @@ const RightIconButton = styled(IconButton)`
 const PrevArrow = ({ onClick }) => (
   <LeftIconButton onClick={onClick} shape="circle" icon="left" />
 );
-const NextArrow = ({ onClick }) => (
+const NextArrow = ({ onClick = () => null }) => (
   <RightIconButton onClick={onClick} shape="circle" icon="right" />
 );
 
+PrevArrow.defaultProps = {
+  onClick: () => null,
+};
+
+NextArrow.defaultProps = {
+  onClick: () => null,
+};
+
 PrevArrow.propTypes = {
-  onClick: PropTypes.func.isRequired,
+  onClick: PropTypes.func,
 };
 
 NextArrow.propTypes = {
-  onClick: PropTypes.func.isRequired,
+  onClick: PropTypes.func,
 };
 
 const ButtonGroup = Button.Group;
@@ -67,8 +77,27 @@ const sliderSettings = {
   prevArrow: <PrevArrow />,
 };
 
+const CardBenefitWrapper = styled(Box)`
+  border-bottom: 1px solid #b2b3b8;
+  padding: 1em;
+`;
+
+const BenefitIcon = styled(Icon)`
+  margin-right: 1em;
+`;
+
+const CardBenefit = ({ text }) => (
+  <CardBenefitWrapper display="flex" alignItems="center">
+    <BenefitIcon type="check" />
+    <Text>{text}</Text>
+  </CardBenefitWrapper>
+);
+
+CardBenefit.propTypes = {
+  text: PropTypes.string.isRequired,
+};
+
 const Packages = ({ packages, getPackages }) => {
-  let counter = 0;
   useEffect(() => {
     getPackages();
   }, [getPackages]);
@@ -101,14 +130,45 @@ const Packages = ({ packages, getPackages }) => {
         quae voluptatibus temporibus.
       </Description>
       <Box mb="2em">
+        {/* eslint-disable */}
         <Slider {...sliderSettings}>
-          {packages.map(pack => (
-            <StyledCard hoverable bordered={false}>
-              <CardTitleBox>{pack.description}</CardTitleBox>
-              <p>Card content</p>
-              <p>Card content</p>
-            </StyledCard>
-          ))}
+          {packages.length > 0 &&
+            packages.map(pack => (
+              <StyledCard hoverable bordered={false} key={pack.id}>
+                <CardTitleBox>
+                  <Title align="center" color="#fff" fontSize="20px" mb="4px">
+                    {pack.description}
+                  </Title>
+                  <Title align="center" color="#fff" fontSize="20px" mb="0px">
+                    {pack.monthly_plan}
+                  </Title>
+                </CardTitleBox>
+                <CardBody>
+                  {pack.other_benefits && (
+                    <CardBenefit text={pack.other_benefits} />
+                  )}
+                  {pack.other_benefits_1 && (
+                    <CardBenefit text={pack.other_benefits_1} />
+                  )}
+                  {pack.other_benefits_2 && (
+                    <CardBenefit text={pack.other_benefits_2} />
+                  )}
+                  {pack.other_benefits_3 && (
+                    <CardBenefit text={pack.other_benefits_3} />
+                  )}
+                  {pack.other_benefits_4 && (
+                    <CardBenefit text={pack.other_benefits_4} />
+                  )}
+                </CardBody>
+                <Box>
+                  <Box display="flex" justifyContent="space-around" mb="1em">
+                    <StyledButton>Plan only</StyledButton>
+                    <StyledButton>With Device</StyledButton>
+                  </Box>
+                  <CardDetailsText>See all benefit details</CardDetailsText>
+                </Box>
+              </StyledCard>
+            ))}
         </Slider>
       </Box>
       <Title align="center">Eligible device for this plan:</Title>
@@ -123,14 +183,30 @@ const Packages = ({ packages, getPackages }) => {
   );
 };
 
-const StyledCard = styled(Card)`
-  border-radius: 10px;
+const StyledCard = styled.div`
+  height: 500px;
+  padding: 1em;
+`;
+
+const CardDetailsText = styled.p`
+  margin: 0;
+  color: #54b8e9;
+  cursor: pointer;
+  text-decoration: underline;
+  text-align: center;
+`;
+
+const CardBody = styled.div`
+  height: calc(500px - 80px - 100px);
+  overflow: auto;
 `;
 
 const CardTitleBox = styled(Box)`
+  border-radius: 20px 20px 0 0;
   background-color: #54b8e9;
   text-align: center;
-  padding: 2em 1em;
+  height: 80px;
+  padding: 1em;
 `;
 
 const IconsWrapper = styled(Box)`
@@ -144,10 +220,11 @@ const IconsWrapper = styled(Box)`
 
 const Title = styled.h2`
   margin: 0;
-  margin-bottom: 20px;
+  color: ${({ color }) => (color ? color : '#000')};
+  margin-bottom: ${({ mb }) => mb || '20px'};
   text-align: ${({ align }) => align || 'left'};
-  font-size: 30px;
-  font-weight: ${props => (props.fontWeigth ? props.fontWeigth : 500)};
+  font-size: ${({ fontSize }) => (fontSize ? fontSize : '30px')};
+  font-weight: ${({ fontWeigth }) => (fontWeigth ? fontWeigth : 500)};
 `;
 
 const BrandIconButton = styled.button`
