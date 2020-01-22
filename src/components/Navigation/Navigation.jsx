@@ -7,7 +7,7 @@ import Box from '../shared/Box';
 import DropDown from '../Header/DropDown';
 
 const Navigation = () => (
-  <Box display="flex" justifyContent="space-between">
+  <Box display="flex" justifyContent="space-between" alignItems="center">
     <Box display="flex" alignItems="center">
       <SiteLogo>ZAIN</SiteLogo>
       <StyledMenu>
@@ -25,7 +25,7 @@ const Navigation = () => (
 );
 
 const SiteLogo = styled(HeaderTitle)`
-  margin-right: 40px;
+  margin-right: 1em;
   font-size: 40px;
 `;
 

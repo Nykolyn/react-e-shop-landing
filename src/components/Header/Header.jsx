@@ -33,13 +33,13 @@ const Header = () => (
         display="flex"
         alignItems="center"
         justifyContent="space-between"
-        pt={20}
-        mb={20}
+        pt="1em"
+        mb="2em"
       >
-        <DropDown dropDown={['option 1', 'option 2']} width="8%" mr={40}>
+        <DropDown dropDown={['option 1', 'option 2']} width="8%" mr="2em">
           Zain Personal
         </DropDown>
-        <Box width="70%" mr={40}>
+        <Box width="70%" mr="2em">
           <Input.Search
             enterButton
             addonBefore={selectBefore}
