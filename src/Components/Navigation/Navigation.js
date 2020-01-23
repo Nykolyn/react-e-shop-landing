@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import HeaderTitle from '../Header/HeaderTitle';
-import HeaderIcon from '../Header/HeaderIcon';
+import Icon from '../shared/Icon';
 import Box from '../shared/Box';
 import DropDown from '../Header/DropDown';
 import siteLogo from '../../assets/header-logo.png';
@@ -19,7 +19,7 @@ const Navigation = () => (
       </StyledMenu>
     </Box>
     <Box display="flex">
-      <HeaderIcon mr={20} type="search" />
+      <Icon mr={20} type="search" />
       <HeaderTitle>Login</HeaderTitle>
     </Box>
   </Box>

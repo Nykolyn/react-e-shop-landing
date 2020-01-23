@@ -6,7 +6,7 @@ import Container from '../Container';
 import Navigation from '../Navigation';
 import Box from '../shared/Box';
 import DropDown from './DropDown';
-import StyledIcon from './HeaderIcon';
+import Icon from '../shared/Icon';
 import HeaderTitle from './HeaderTitle';
 
 const { Option } = Select;
@@ -52,8 +52,8 @@ const Header = () => (
         >
           <HeaderTitle>ع</HeaderTitle>
           <HeaderTitle>Track orders</HeaderTitle>
-          <StyledIcon type="heart" />
-          <StyledIcon type="shopping-cart" />
+          <Icon type="heart" />
+          <Icon type="shopping-cart" />
         </Box>
       </Box>
       <Navigation />

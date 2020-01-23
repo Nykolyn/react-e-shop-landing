@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Menu, Dropdown } from 'antd';
 
 import Box from '../shared/Box';
-import HeaderIcon from './HeaderIcon';
+import Icon from '../shared/Icon';
 import HeaderTitle from './HeaderTitle';
 
 const DropDownMenu = menu => (
@@ -17,7 +17,7 @@ const DropDown = ({ dropDown, level, children, ...props }) => {
     <Dropdown overlay={() => DropDownMenu(dropDown)}>
       <Box display="flex" alignItems="center" {...props}>
         <HeaderTitle level={level}>{children}</HeaderTitle>
-        <HeaderIcon ml={2} type="caret-down" />
+        <Icon ml={2} type="caret-down" />
       </Box>
     </Dropdown>
   );

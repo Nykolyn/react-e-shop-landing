@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/e-shop-react-landing/static/css/main.b3c89f73.chunk.css",
+    "main.js": "/e-shop-react-landing/static/js/main.f35f86f7.chunk.js",
+    "main.js.map": "/e-shop-react-landing/static/js/main.f35f86f7.chunk.js.map",
+    "runtime-main.js": "/e-shop-react-landing/static/js/runtime-main.11bdbc69.js",
+    "runtime-main.js.map": "/e-shop-react-landing/static/js/runtime-main.11bdbc69.js.map",
+    "static/css/2.caed6f21.chunk.css": "/e-shop-react-landing/static/css/2.caed6f21.chunk.css",
+    "static/js/2.10e9205c.chunk.js": "/e-shop-react-landing/static/js/2.10e9205c.chunk.js",
+    "static/js/2.10e9205c.chunk.js.map": "/e-shop-react-landing/static/js/2.10e9205c.chunk.js.map",
+    "index.html": "/e-shop-react-landing/index.html",
+    "precache-manifest.155deafbf46f085430d84fcf7de4bb5c.js": "/e-shop-react-landing/precache-manifest.155deafbf46f085430d84fcf7de4bb5c.js",
+    "service-worker.js": "/e-shop-react-landing/service-worker.js",
+    "static/css/2.caed6f21.chunk.css.map": "/e-shop-react-landing/static/css/2.caed6f21.chunk.css.map",
+    "static/css/main.b3c89f73.chunk.css.map": "/e-shop-react-landing/static/css/main.b3c89f73.chunk.css.map",
+    "static/media/background-image.png": "/e-shop-react-landing/static/media/background-image.690ab082.png",
+    "static/media/slick-theme.css": "/e-shop-react-landing/static/media/slick.f97e3bbf.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.11bdbc69.js",
+    "static/css/2.caed6f21.chunk.css",
+    "static/js/2.10e9205c.chunk.js",
+    "static/css/main.b3c89f73.chunk.css",
+    "static/js/main.f35f86f7.chunk.js"
+  ]
+}
