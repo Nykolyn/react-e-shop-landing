@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "c40ba6bdb4114b8322df7cf7efda63de",
+    "revision": "766d1181c1dd3bc19521e0309d5fd4f8",
     "url": "/react-e-shop-landing/index.html"
   },
   {
-    "revision": "e443f20a98bdb8e7ae53",
+    "revision": "a3cf6c9b577706f49eb2",
     "url": "/react-e-shop-landing/static/css/2.b6cef843.chunk.css"
   },
   {
-    "revision": "72641f38ab983bc6c6d8",
+    "revision": "954c70f5fb47a43ddced",
     "url": "/react-e-shop-landing/static/css/main.b3c89f73.chunk.css"
   },
   {
-    "revision": "e443f20a98bdb8e7ae53",
-    "url": "/react-e-shop-landing/static/js/2.e2622acd.chunk.js"
+    "revision": "a3cf6c9b577706f49eb2",
+    "url": "/react-e-shop-landing/static/js/2.91a524bd.chunk.js"
   },
   {
-    "revision": "72641f38ab983bc6c6d8",
-    "url": "/react-e-shop-landing/static/js/main.9dc9f0d0.chunk.js"
+    "revision": "954c70f5fb47a43ddced",
+    "url": "/react-e-shop-landing/static/js/main.61c69294.chunk.js"
   },
   {
     "revision": "80971c8a07f57a341bff",
