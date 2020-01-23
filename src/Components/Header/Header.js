@@ -16,17 +16,13 @@ const StyledSelect = styled(Select)`
   text-align: center;
 `;
 
-const selectBefore = (
+const selectBeforeOptions = (
   <StyledSelect defaultValue="All">
     <Option value="All">All</Option>
     <Option value="option 1">Option 1</Option>
     <Option value="option 2">Option 2</Option>
   </StyledSelect>
 );
-
-const StyledHeader = styled.header`
-  background-color: #000;
-`;
 
 const Header = () => (
   <StyledHeader>
@@ -44,7 +40,7 @@ const Header = () => (
         <Box width="60%" mr="2em">
           <Input.Search
             enterButton
-            addonBefore={selectBefore}
+            addonBefore={selectBeforeOptions}
             placeholder="Search..."
           />
         </Box>
@@ -64,5 +60,9 @@ const Header = () => (
     </Container>
   </StyledHeader>
 );
+
+const StyledHeader = styled.header`
+  background-color: #000;
+`;
 
 export default Header;

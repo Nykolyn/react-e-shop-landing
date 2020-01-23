@@ -1,7 +1,7 @@
 import React from 'react';
 
-import PackagesComponent from '../../components/Packages';
-import DevicesComponent from '../../components/Devices';
+import PackagesComponent from '../../Components/Packages';
+import DevicesComponent from '../../Components/Devices';
 
 const Packages = () => (
   <>
