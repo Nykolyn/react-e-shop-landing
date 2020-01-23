@@ -7,8 +7,8 @@ import COLORS from '../../styles/COLORS';
 import Box from './Box';
 
 const Icon = ({ type, fontSize, color, ...props }) => (
-  <Box {...props}>
-    <StyledIcon fontSize={fontSize} type={type} />
+  <Box display="flex" alignItems="center" justifyContent="center" {...props}>
+    <StyledIcon fontSize={fontSize} color={color} type={type} />
   </Box>
 );
 

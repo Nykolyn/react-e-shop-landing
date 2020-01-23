@@ -6,6 +6,7 @@ import Icon from '../shared/Icon';
 import Box from '../shared/Box';
 import DropDown from '../Header/DropDown';
 import siteLogo from '../../assets/header-logo.png';
+import COLORS from '../../styles/COLORS';
 
 const Navigation = () => (
   <Box display="flex" justifyContent="space-between" alignItems="center">
@@ -19,7 +20,7 @@ const Navigation = () => (
       </StyledMenu>
     </Box>
     <Box display="flex">
-      <Icon mr={20} type="search" />
+      <SeacrhIcon mr={20} type="search" />
       <HeaderTitle>Login</HeaderTitle>
     </Box>
   </Box>
@@ -28,6 +29,20 @@ const Navigation = () => (
 const SiteLogo = styled.img`
   margin-right: 4em;
   padding-bottom: 4px;
+`;
+
+const SeacrhIcon = styled(Icon)`
+  position: relative;
+  &::after {
+    content: '';
+    position: absolute;
+    width: 1px;
+    right: -10px;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 14px;
+    background-color: ${COLORS.WHITE};
+  }
 `;
 
 const StyledMenu = styled.ul`

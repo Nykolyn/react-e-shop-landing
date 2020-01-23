@@ -5,6 +5,7 @@ import { Menu, Dropdown } from 'antd';
 import Box from '../shared/Box';
 import Icon from '../shared/Icon';
 import HeaderTitle from './HeaderTitle';
+import COLORS from '../../styles/COLORS';
 
 const DropDownMenu = menu => (
   <Menu>
@@ -17,7 +18,7 @@ const DropDown = ({ dropDown, level, children, ...props }) => {
     <Dropdown overlay={() => DropDownMenu(dropDown)}>
       <Box display="flex" alignItems="center" {...props}>
         <HeaderTitle level={level}>{children}</HeaderTitle>
-        <Icon ml={2} type="caret-down" />
+        <Icon ml={2} type="caret-down" color={COLORS.WHITE} />
       </Box>
     </Dropdown>
   );

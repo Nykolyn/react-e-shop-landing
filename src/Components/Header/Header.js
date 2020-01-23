@@ -8,6 +8,7 @@ import Box from '../shared/Box';
 import DropDown from './DropDown';
 import Icon from '../shared/Icon';
 import HeaderTitle from './HeaderTitle';
+import COLORS from '../../styles/COLORS';
 
 const { Option } = Select;
 
@@ -23,6 +24,30 @@ const selectBeforeOptions = (
     <Option value="option 2">Option 2</Option>
   </StyledSelect>
 );
+
+const HeaderList = styled.ul`
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  width: 20%;
+  justify-content: space-between;
+`;
+
+const HeaderItem = styled.li`
+  position: relative;
+  &:nth-last-child(n + 2) ::after {
+    content: '';
+    width: 1px;
+    background-color: #fff;
+    top: 50%;
+    transform: translateY(-50%);
+    right: -20px;
+    height: 16px;
+    position: absolute;
+  }
+`;
 
 const Header = () => (
   <StyledHeader>
@@ -44,17 +69,22 @@ const Header = () => (
             placeholder="Search..."
           />
         </Box>
-        <Box
-          display="flex"
-          alignItems="center"
-          width="20%"
-          justifyContent="space-between"
-        >
-          <HeaderTitle>ع</HeaderTitle>
-          <HeaderTitle>Track orders</HeaderTitle>
-          <Icon type="heart" />
-          <Icon type="shopping-cart" />
-        </Box>
+        <HeaderList>
+          <HeaderItem>
+            <HeaderTitle>ع</HeaderTitle>
+          </HeaderItem>
+          <HeaderItem>
+            <HeaderTitle dispaly="flex" alignItems="center">
+              Track orders
+            </HeaderTitle>
+          </HeaderItem>
+          <HeaderItem>
+            <Icon fontSize="20px" type="heart" />
+          </HeaderItem>
+          <HeaderItem>
+            <Icon fontSize="20px" type="shopping-cart" />
+          </HeaderItem>
+        </HeaderList>
       </Box>
       <Navigation />
     </Container>
@@ -62,7 +92,7 @@ const Header = () => (
 );
 
 const StyledHeader = styled.header`
-  background-color: #000;
+  background-color: ${COLORS.BLACK};
 `;
 
 export default Header;
