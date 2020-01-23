@@ -27,6 +27,7 @@ const Navigation = () => (
 );
 
 const SiteLogo = styled.img`
+  cursor: pointer;
   margin-right: 4em;
   padding-bottom: 4px;
 `;

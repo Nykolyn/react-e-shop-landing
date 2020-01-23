@@ -5,6 +5,6 @@ const COLORS = {
 };
 
 export const boxShadow = '0px 0px 5px 0px rgba(209, 209, 209, 1)';
-export const boxShadowHower = '0px 0px 14px 0px rgba(209, 209, 209, 1)';
+export const boxShadowHover = '0px 0px 14px 2px rgba(209, 209, 209, 1)';
 
 export default COLORS;

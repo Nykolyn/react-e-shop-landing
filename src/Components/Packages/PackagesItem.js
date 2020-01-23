@@ -6,7 +6,7 @@ import Title from '../shared/Title';
 import Button from '../shared/Button';
 import Box from '../shared/Box';
 import CardBenefitOption from './CardBenefitOption';
-import COLORS, { boxShadow, boxShadowHower } from '../../styles/COLORS';
+import COLORS, { boxShadow, boxShadowHover } from '../../styles/COLORS';
 
 const PackagesItem = ({
   description,
@@ -51,7 +51,7 @@ const CardWrapper = styled(Box)`
   padding-bottom: 14px;
   border-radius: 16px;
   &:hover {
-    box-shadow: ${boxShadowHower};
+    box-shadow: ${boxShadowHover};
     transform: translateY(-2px);
   }
 `;

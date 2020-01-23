@@ -25,30 +25,6 @@ const selectBeforeOptions = (
   </StyledSelect>
 );
 
-const HeaderList = styled.ul`
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: flex;
-  align-items: center;
-  width: 20%;
-  justify-content: space-between;
-`;
-
-const HeaderItem = styled.li`
-  position: relative;
-  &:nth-last-child(n + 2) ::after {
-    content: '';
-    width: 1px;
-    background-color: #fff;
-    top: 50%;
-    transform: translateY(-50%);
-    right: -20px;
-    height: 16px;
-    position: absolute;
-  }
-`;
-
 const Header = () => (
   <StyledHeader>
     <Container>
@@ -90,6 +66,30 @@ const Header = () => (
     </Container>
   </StyledHeader>
 );
+
+const HeaderList = styled.ul`
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  width: 20%;
+  justify-content: space-between;
+`;
+
+const HeaderItem = styled.li`
+  position: relative;
+  &:nth-last-child(n + 2) ::after {
+    content: '';
+    width: 1px;
+    background-color: #fff;
+    top: 50%;
+    transform: translateY(-50%);
+    right: -20px;
+    height: 16px;
+    position: absolute;
+  }
+`;
 
 const StyledHeader = styled.header`
   background-color: ${COLORS.BLACK};
