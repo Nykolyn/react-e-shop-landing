@@ -6,14 +6,14 @@ import styled from 'styled-components';
 import COLORS from '../../styles/COLORS';
 import Box from './Box';
 
-const Icon = ({ type, fontSize, ...props }) => (
+const Icon = ({ type, fontSize, color, ...props }) => (
   <Box {...props}>
     <StyledIcon fontSize={fontSize} type={type} />
   </Box>
 );
 
 const StyledIcon = styled(AntdIcon)`
-  color: #fff;
+  color: ${({ color }) => color};
   transition: all 0.4s;
   cursor: pointer;
   font-size: ${({ fontSize }) => fontSize};
@@ -24,11 +24,13 @@ const StyledIcon = styled(AntdIcon)`
 
 Icon.defaultProps = {
   fontSize: '14px',
+  color: COLORS.WHITE,
 };
 
 Icon.propTypes = {
   type: PropTypes.string.isRequired,
   fontSize: PropTypes.string,
+  color: PropTypes.string,
 };
 
 export default Icon;

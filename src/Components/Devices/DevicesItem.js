@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Icon } from 'antd';
 import styled from 'styled-components';
 
 import Title from '../shared/Title';
+import Icon from '../shared/Icon';
+import COLORS from '../../styles/COLORS';
 
 const DevicesItem = ({ model, img, brand, price }) => (
   <DeviceListItem>
@@ -25,8 +26,8 @@ const DevicesItem = ({ model, img, brand, price }) => (
       </Title>
     </DescWrapper>
     <IconsWrapper>
-      <DeviceIcon type="shrink" />
-      <DeviceIcon type="shopping-cart" />
+      <Icon fontSize="20px" color={COLORS.BLACK} type="shrink" />
+      <Icon fontSize="20px" color={COLORS.BLACK} type="shopping-cart" />
     </IconsWrapper>
   </DeviceListItem>
 );
@@ -63,11 +64,6 @@ const DeviceImg = styled.img`
   display: block;
   margin: 0 auto;
   height: 250px;
-`;
-
-const DeviceIcon = styled(Icon)`
-  font-size: 20px;
-  cursor: pointer;
 `;
 
 const IconsWrapper = styled.div`

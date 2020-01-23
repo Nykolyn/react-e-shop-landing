@@ -6,6 +6,7 @@ import Title from '../shared/Title';
 import Button from '../shared/Button';
 import Box from '../shared/Box';
 import CardBenefitOption from './CardBenefitOption';
+import COLORS, { boxShadow, boxShadowHower } from '../../styles/COLORS';
 
 const PackagesItem = ({
   description,
@@ -15,35 +16,54 @@ const PackagesItem = ({
   other_benefits_2: benefit2,
   other_benefits_3: benefit3,
   other_benefits_4: benefit4,
-  other_benefits_5: benefit5,
 }) => (
   <StyledCard hoverable bordered={false}>
-    <CardTitleBox>
-      <Title align="center" color="#fff" fontSize="20px" mb="4px">
-        {description}
-      </Title>
-      <Title align="center" color="#fff" fontSize="20px" mb="0px">
-        {plan}
-      </Title>
-    </CardTitleBox>
-    <CardBody>
-      {benefit && <CardBenefitOption text={benefit} />}
-      {benefit1 && <CardBenefitOption text={benefit1} />}
-      {benefit2 && <CardBenefitOption text={benefit2} />}
-      {benefit3 && <CardBenefitOption text={benefit3} />}
-      {benefit4 && <CardBenefitOption text={benefit4} />}
-    </CardBody>
-    <Box>
-      <Box display="flex" justifyContent="space-around" mb="1em">
-        <Button>Plan only</Button>
-        <Button>With Device</Button>
+    <CardWrapper>
+      <CardTitleBox>
+        <Title align="center" color="#fff" fontSize="20px" mb="4px">
+          {description}
+        </Title>
+        <Title align="center" color="#fff" fontSize="20px" mb="0px">
+          {plan}
+        </Title>
+      </CardTitleBox>
+      <CardBody>
+        {benefit && <CardBenefitOption text={benefit} />}
+        {benefit1 && <CardBenefitOption text={benefit1} />}
+        {benefit2 && <CardBenefitOption text={benefit2} />}
+        {benefit3 && <CardBenefitOption text={benefit3} />}
+        {benefit4 && <CardBenefitOption text={benefit4} />}
+      </CardBody>
+      <Box>
+        <Box display="flex" justifyContent="space-around" mb="1em">
+          <CardButton>Plan Only</CardButton>
+          <CardButton>With Device</CardButton>
+        </Box>
+        <CardDetailsText>See all benefit details</CardDetailsText>
       </Box>
-      <CardDetailsText>See all benefit details</CardDetailsText>
-    </Box>
+    </CardWrapper>
   </StyledCard>
 );
 
-const StyledCard = styled.div`
+const CardWrapper = styled(Box)`
+  box-shadow: ${boxShadow};
+  transition: all 0.4s;
+  padding-bottom: 14px;
+  border-radius: 16px;
+  &:hover {
+    box-shadow: ${boxShadowHower};
+    transform: translateY(-2px);
+  }
+`;
+
+const CardButton = styled(Button)`
+  background-color: ${COLORS.WHITE};
+  color: ${COLORS.MAIN_BLUE_COLOR};
+  width: 40%;
+  border: 1px solid ${COLORS.MAIN_BLUE_COLOR};
+`;
+
+const StyledCard = styled(Box)`
   height: 500px;
   padding: 1em;
 `;
@@ -62,7 +82,7 @@ const CardBody = styled.div`
 `;
 
 const CardTitleBox = styled(Box)`
-  border-radius: 20px 20px 0 0;
+  border-radius: 16px 16px 0 0;
   background-color: #54b8e9;
   text-align: center;
   height: 80px;
@@ -75,7 +95,6 @@ PackagesItem.defaultProps = {
   other_benefits_2: '',
   other_benefits_3: '',
   other_benefits_4: '',
-  other_benefits_5: '',
 };
 
 PackagesItem.propTypes = {
@@ -86,7 +105,6 @@ PackagesItem.propTypes = {
   other_benefits_2: PropTypes.string,
   other_benefits_3: PropTypes.string,
   other_benefits_4: PropTypes.string,
-  other_benefits_5: PropTypes.string,
 };
 
 export default PackagesItem;

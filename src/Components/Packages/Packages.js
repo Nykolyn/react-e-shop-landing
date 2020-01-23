@@ -15,6 +15,7 @@ import Title from '../shared/Title';
 import Container from '../Container';
 import PackagesSlider from './PackagesSlider';
 import Button from '../shared/Button';
+import { boxShadow } from '../../styles/COLORS';
 
 const ButtonGroup = Button.Group;
 
@@ -35,7 +36,7 @@ const Packages = ({ getPackages }) => {
         quae voluptatibus temporibus.
       </Description>
       <StyledButtonGroup>
-        <Button>Go Postpaid Plans</Button>
+        <Button active>Go Postpaid Plans</Button>
         <Button>Go Family</Button>
         <Button>Go Governorates</Button>
       </StyledButtonGroup>
@@ -88,14 +89,16 @@ const BrandIconButton = styled.button`
 const Description = styled.p`
   margin: 0;
   margin-bottom: 2em;
-  width: 80%;
+  width: 90%;
   line-height: 30px;
 `;
 
-const StyledButtonGroup = styled(ButtonGroup)`
+const StyledButtonGroup = styled(Box)`
   display: block;
-  padding-top: 2em;
-  margin-bottom: 4em;
+  box-shadow: ${boxShadow};
+  margin: 2em auto;
+  width: 378px;
+  border-radius: 20px;
   text-align: center;
 `;
 
