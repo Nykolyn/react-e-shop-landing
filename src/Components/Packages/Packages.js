@@ -1,7 +1,6 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-// import { ReactSVG } from 'react-svg';
 import styled from 'styled-components';
 
 import { ReactComponent as AppleIcon } from '../../assets/icons/brands-and-logotypes.svg';
@@ -17,55 +16,63 @@ import PackagesSlider from './PackagesSlider';
 import Button from '../shared/Button';
 import COLORS, { boxShadow } from '../../styles/COLORS';
 
+const devices = [
+  { name: 'all', Icon: 'All' },
+  { name: 'apple', Icon: <AppleIcon width={25} height={25} /> },
+  { name: 'samsung', Icon: <SamsungIcon width={35} height={35} /> },
+  { name: 'huawei', Icon: <HuaweiIcon width={25} height={25} /> },
+  { name: 'oneplus', Icon: <OneplusIcon width={25} height={25} /> },
+];
+
+const Description = styled.p`
+  margin: 0;
+  margin-bottom: 2em;
+  width: 90%;
+  line-height: 30px;
+`;
+
+const LoremDescription = () => (
+  <Description>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt eveniet beatae
+    alias ducimus molestias quo doloribus, odit, fugiat dolor minima dignissimos
+    magni quos, earum optio recusandae sed maiores esse accusamus? Natus sint
+    sed officiis, voluptatem itaque autem tempora esse tempore omnis ipsa totam
+    rerum deleniti repellat distinctio impedit ut, quas aliquam officia
+    perspiciatis similique perferendis assumenda! Est quae voluptatibus
+    temporibus.
+  </Description>
+);
+
 const Packages = ({ getPackages }) => {
+  const [activeIcon, setActiveIcon] = useState('all');
   useEffect(() => {
     getPackages();
   }, [getPackages]);
   return (
     <Container width="80%">
       <Title fontWeigth={700}>Go Packages</Title>
-      <Description>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt eveniet
-        beatae alias ducimus molestias quo doloribus, odit, fugiat dolor minima
-        dignissimos magni quos, earum optio recusandae sed maiores esse
-        accusamus? Natus sint sed officiis, voluptatem itaque autem tempora esse
-        tempore omnis ipsa totam rerum deleniti repellat distinctio impedit ut,
-        quas aliquam officia perspiciatis similique perferendis assumenda! Est
-        quae voluptatibus temporibus.
-      </Description>
+      <LoremDescription />
       <StyledButtonGroup>
-        <Button active>Go Postpaid Plans</Button>
+        <Button active="true">Go Postpaid Plans</Button>
         <Button>Go Family</Button>
         <Button>Go Governorates</Button>
       </StyledButtonGroup>
       <Title>Go Postpaid Plans</Title>
-      <Description>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt eveniet
-        beatae alias ducimus molestias quo doloribus, odit, fugiat dolor minima
-        dignissimos magni quos, earum optio recusandae sed maiores esse
-        accusamus? Natus sint sed officiis, voluptatem itaque autem tempora esse
-        tempore omnis ipsa totam rerum deleniti repellat distinctio impedit ut,
-        quas aliquam officia perspiciatis similique perferendis assumenda! Est
-        quae voluptatibus temporibus.
-      </Description>
+      <LoremDescription />
       <Box mb="2em">
         <PackagesSlider />
       </Box>
       <Title align="center">Eligible device for this plan:</Title>
       <IconsWrapper>
-        <BrandIconButton active>All</BrandIconButton>
-        <BrandIconButton>
-          <AppleIcon width={25} height={25} />
-        </BrandIconButton>
-        <BrandIconButton>
-          <SamsungIcon width={35} height={35} />
-        </BrandIconButton>
-        <BrandIconButton>
-          <HuaweiIcon width={25} height={25} />
-        </BrandIconButton>
-        <BrandIconButton>
-          <OneplusIcon width={25} height={25} />
-        </BrandIconButton>
+        {devices.map(device => (
+          <BrandIconButton
+            active={activeIcon === device.name}
+            key={device.name}
+            onClick={() => setActiveIcon(device.name)}
+          >
+            {device.Icon}
+          </BrandIconButton>
+        ))}
       </IconsWrapper>
     </Container>
   );
@@ -106,13 +113,6 @@ const BrandIconButton = styled.button`
     fill: ${COLORS.WHITE};
     box-shadow: 0px 0px 9px 0px rgba(84,184,233,1);
   `}
-`;
-
-const Description = styled.p`
-  margin: 0;
-  margin-bottom: 2em;
-  width: 90%;
-  line-height: 30px;
 `;
 
 const StyledButtonGroup = styled(Box)`
