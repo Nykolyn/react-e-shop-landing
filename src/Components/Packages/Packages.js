@@ -3,11 +3,6 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-import { ReactComponent as AppleIcon } from '../../assets/icons/brands-and-logotypes.svg';
-import { ReactComponent as SamsungIcon } from '../../assets/icons/samsung.svg';
-import { ReactComponent as HuaweiIcon } from '../../assets/icons/huawei.svg';
-import { ReactComponent as OneplusIcon } from '../../assets/icons/one-plus.svg';
-
 import { getPackages } from '../../redux/packages/actions';
 import Box from '../shared/Box';
 import Title from '../shared/Title';
@@ -15,6 +10,11 @@ import Container from '../Container';
 import PackagesSlider from './PackagesSlider';
 import Button from '../shared/Button';
 import COLORS, { boxShadow } from '../../styles/COLORS';
+
+import { ReactComponent as AppleIcon } from '../../assets/icons/brands-and-logotypes.svg';
+import { ReactComponent as SamsungIcon } from '../../assets/icons/samsung.svg';
+import { ReactComponent as HuaweiIcon } from '../../assets/icons/huawei.svg';
+import { ReactComponent as OneplusIcon } from '../../assets/icons/one-plus.svg';
 
 const devices = [
   { name: 'all', Icon: 'All' },
@@ -55,17 +55,19 @@ const Packages = ({ getPackages }) => {
     <Container width="80%">
       <Title fontWeigth={700}>Go Packages</Title>
       <LoremDescription />
-      <StyledButtonGroup>
-        {packagePlans.map(plan => (
-          <Button
-            key={plan}
-            active={activePlanBtn === plan ? 'true' : null}
-            onClick={() => setActivePlanBtn(plan)}
-          >
-            {plan}
-          </Button>
-        ))}
-      </StyledButtonGroup>
+      <Box display="flex" alignItems="center">
+        <StyledButtonGroup>
+          {packagePlans.map(plan => (
+            <Button
+              key={plan}
+              active={activePlanBtn === plan ? 'true' : null}
+              onClick={() => setActivePlanBtn(plan)}
+            >
+              {plan}
+            </Button>
+          ))}
+        </StyledButtonGroup>
+      </Box>
       <Title>Go Postpaid Plans</Title>
       <LoremDescription />
       <Box mb="2em">
@@ -125,10 +127,9 @@ const BrandIconButton = styled.button`
 `;
 
 const StyledButtonGroup = styled(Box)`
-  display: block;
+  display: inline-block;
   box-shadow: ${boxShadow};
   margin: 2em auto;
-  width: 378px;
   border-radius: 20px;
   text-align: center;
 `;
