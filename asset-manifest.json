@@ -1,26 +1,30 @@
 {
   "files": {
     "main.css": "/e-shop-react-landing/static/css/main.b3c89f73.chunk.css",
-    "main.js": "/e-shop-react-landing/static/js/main.b511a625.chunk.js",
-    "main.js.map": "/e-shop-react-landing/static/js/main.b511a625.chunk.js.map",
+    "main.js": "/e-shop-react-landing/static/js/main.31286522.chunk.js",
+    "main.js.map": "/e-shop-react-landing/static/js/main.31286522.chunk.js.map",
     "runtime-main.js": "/e-shop-react-landing/static/js/runtime-main.11bdbc69.js",
     "runtime-main.js.map": "/e-shop-react-landing/static/js/runtime-main.11bdbc69.js.map",
     "static/css/2.caed6f21.chunk.css": "/e-shop-react-landing/static/css/2.caed6f21.chunk.css",
-    "static/js/2.10e9205c.chunk.js": "/e-shop-react-landing/static/js/2.10e9205c.chunk.js",
-    "static/js/2.10e9205c.chunk.js.map": "/e-shop-react-landing/static/js/2.10e9205c.chunk.js.map",
+    "static/js/2.a2167ebe.chunk.js": "/e-shop-react-landing/static/js/2.a2167ebe.chunk.js",
+    "static/js/2.a2167ebe.chunk.js.map": "/e-shop-react-landing/static/js/2.a2167ebe.chunk.js.map",
     "index.html": "/e-shop-react-landing/index.html",
-    "precache-manifest.46368a0c37e89b6641f03ab4c70164f5.js": "/e-shop-react-landing/precache-manifest.46368a0c37e89b6641f03ab4c70164f5.js",
+    "precache-manifest.93f1bc3e65df62dfdc447a5172e82192.js": "/e-shop-react-landing/precache-manifest.93f1bc3e65df62dfdc447a5172e82192.js",
     "service-worker.js": "/e-shop-react-landing/service-worker.js",
     "static/css/2.caed6f21.chunk.css.map": "/e-shop-react-landing/static/css/2.caed6f21.chunk.css.map",
     "static/css/main.b3c89f73.chunk.css.map": "/e-shop-react-landing/static/css/main.b3c89f73.chunk.css.map",
     "static/media/background-image.png": "/e-shop-react-landing/static/media/background-image.690ab082.png",
+    "static/media/brands-and-logotypes.3c5affab.svg": "/e-shop-react-landing/static/media/brands-and-logotypes.3c5affab.svg",
+    "static/media/huawei.cf745223.svg": "/e-shop-react-landing/static/media/huawei.cf745223.svg",
+    "static/media/one-plus.586a2643.svg": "/e-shop-react-landing/static/media/one-plus.586a2643.svg",
+    "static/media/samsung.ffa3a74b.svg": "/e-shop-react-landing/static/media/samsung.ffa3a74b.svg",
     "static/media/slick-theme.css": "/e-shop-react-landing/static/media/slick.f97e3bbf.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.11bdbc69.js",
     "static/css/2.caed6f21.chunk.css",
-    "static/js/2.10e9205c.chunk.js",
+    "static/js/2.a2167ebe.chunk.js",
     "static/css/main.b3c89f73.chunk.css",
-    "static/js/main.b511a625.chunk.js"
+    "static/js/main.31286522.chunk.js"
   ]
 }
