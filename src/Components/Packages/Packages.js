@@ -4,10 +4,10 @@ import PropTypes from 'prop-types';
 // import { ReactSVG } from 'react-svg';
 import styled from 'styled-components';
 
-// import appleIcon from '../../assets/icons/brands-and-logotypes.svg';
-// import SamsungIcon from '../../assets/icons/samsung.svg';
-// import HuaweiIcon from '../../assets/icons/huawei.svg';
-// import OneplusIcon from '../../assets/icons/one-plus.svg';
+import { ReactComponent as AppleIcon } from '../../assets/icons/brands-and-logotypes.svg';
+import { ReactComponent as SamsungIcon } from '../../assets/icons/samsung.svg';
+import { ReactComponent as HuaweiIcon } from '../../assets/icons/huawei.svg';
+import { ReactComponent as OneplusIcon } from '../../assets/icons/one-plus.svg';
 
 import { getPackages } from '../../redux/packages/actions';
 import Box from '../shared/Box';
@@ -15,9 +15,7 @@ import Title from '../shared/Title';
 import Container from '../Container';
 import PackagesSlider from './PackagesSlider';
 import Button from '../shared/Button';
-import { boxShadow } from '../../styles/COLORS';
-
-const ButtonGroup = Button.Group;
+import COLORS, { boxShadow } from '../../styles/COLORS';
 
 const Packages = ({ getPackages }) => {
   useEffect(() => {
@@ -55,11 +53,19 @@ const Packages = ({ getPackages }) => {
       </Box>
       <Title align="center">Eligible device for this plan:</Title>
       <IconsWrapper>
-        <BrandIconButton>All</BrandIconButton>
-        <BrandIconButton>All</BrandIconButton>
-        <BrandIconButton>All</BrandIconButton>
-        <BrandIconButton>All</BrandIconButton>
-        <BrandIconButton>All</BrandIconButton>
+        <BrandIconButton active>All</BrandIconButton>
+        <BrandIconButton>
+          <AppleIcon width={25} height={25} />
+        </BrandIconButton>
+        <BrandIconButton>
+          <SamsungIcon width={35} height={35} />
+        </BrandIconButton>
+        <BrandIconButton>
+          <HuaweiIcon width={25} height={25} />
+        </BrandIconButton>
+        <BrandIconButton>
+          <OneplusIcon width={25} height={25} />
+        </BrandIconButton>
       </IconsWrapper>
     </Container>
   );
@@ -77,13 +83,29 @@ const IconsWrapper = styled(Box)`
 const BrandIconButton = styled.button`
   border: 1px solid #666;
   margin-right: 10px;
+  transition: all 0.2s;
+  outline: none;
   background-color: transparent;
   border-radius: 50%;
   width: 50px;
   height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  fill: black;
+  &:hover {
+    border-color: transparent;
+    background-color: ${COLORS.MAIN_BLUE_COLOR};
+    color: ${COLORS.WHITE};
+    fill: ${COLORS.WHITE};
+  }
+
+  ${({ active }) =>
+    active &&
+    `
+    border-color: transparent;
+    background-color: ${COLORS.MAIN_BLUE_COLOR};
+    color: ${COLORS.WHITE};
+    fill: ${COLORS.WHITE};
+    box-shadow: 0px 0px 9px 0px rgba(84,184,233,1);
+  `}
 `;
 
 const Description = styled.p`
