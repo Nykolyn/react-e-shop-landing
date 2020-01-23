@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import DevicesItem from './DevicesItem';
+import priceRandomizer from '../helpers/priceRandomizer';
 
 // Mock devices template
 const deviceSample = {
@@ -9,7 +10,6 @@ const deviceSample = {
     'https://cdn.tmobile.com/content/dam/t-mobile/en-p/cell-phones/apple/Apple-iPhone-11-Pro/Midnight-Green/Apple-iPhone-11-Pro-Midnight-Green-frontimage.jpg',
   brand: 'Apple',
   model: 'Xs max',
-  price: '70 JD/Month',
 };
 const devicesArr = [];
 
@@ -18,6 +18,7 @@ const drawDevices = () => {
     const device = {
       ...deviceSample,
       id: i,
+      price: priceRandomizer(),
     };
     devicesArr.push(device);
   }

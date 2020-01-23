@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 import Title from '../shared/Title';
 import Icon from '../shared/Icon';
-import COLORS from '../../styles/COLORS';
+import COLORS, { boxShadow, boxShadowHover } from '../../styles/COLORS';
 
 const DevicesItem = ({ model, img, brand, price }) => (
   <DeviceListItem>
@@ -36,17 +36,17 @@ const DeviceListItem = styled.li`
   width: 19%;
   position: relative;
   transition: all 0.4s;
-  box-shadow: 0px 0px 5px 0px rgba(209, 209, 209, 1);
+  box-shadow: ${boxShadow};
   border-radius: 20px;
   margin-right: 14px;
   margin-bottom: 2em;
   &:nth-child(5n) {
     margin-right: 0;
-    transform: translateX(5px);
   }
 
   &:hover {
-    box-shadow: 0px 0px 14px 0px rgba(209, 209, 209, 1);
+    transform: translateY(-4px);
+    box-shadow: ${boxShadowHover};
   }
 `;
 

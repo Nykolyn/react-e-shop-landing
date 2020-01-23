@@ -2,11 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
-import { Button } from 'antd';
+import { Button, Spin } from 'antd';
 import Slider from 'react-slick';
 
 import PackagesItem from './PackagesItem';
-import { packagesSelector } from '../../redux/packages/selectors';
+import {
+  packagesSelector,
+  loadingSelector,
+} from '../../redux/packages/selectors';
+import Box from '../shared/Box';
 
 const IconButton = styled(Button)`
   position: absolute;
@@ -64,12 +68,31 @@ const sliderSettings = {
   prevArrow: <PrevArrow />,
 };
 
-const PackagesSlider = ({ packages }) => (
-  <Slider {...sliderSettings}>
-    {packages.length > 0 &&
-      packages.map(pack => <PackagesItem key={pack.id} {...pack} />)}
-  </Slider>
+const PackagesSlider = ({ packages, loading }) => (
+  <SliderWrapper loading={loading ? 'true' : null}>
+    {loading && <StyledSpin size="large" />}
+    <Slider {...sliderSettings}>
+      {packages.length > 0 &&
+        packages.map(pack => <PackagesItem key={pack.id} {...pack} />)}
+    </Slider>
+  </SliderWrapper>
 );
+
+// center loader and make content height for future cards
+const SliderWrapper = styled(Box)`
+  ${({ loading }) =>
+    loading &&
+    `
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 500px;
+  `}
+`;
+
+const StyledSpin = styled(Spin)`
+  font-size: 40px;
+`;
 
 PackagesSlider.defaultProps = {
   packages: [],
@@ -77,10 +100,12 @@ PackagesSlider.defaultProps = {
 
 PackagesSlider.propTypes = {
   packages: PropTypes.arrayOf(PropTypes.object.isRequired),
+  loading: PropTypes.bool.isRequired,
 };
 
 const mSTP = state => ({
   packages: packagesSelector(state),
+  loading: loadingSelector(state),
 });
 
 export default connect(mSTP)(PackagesSlider);
