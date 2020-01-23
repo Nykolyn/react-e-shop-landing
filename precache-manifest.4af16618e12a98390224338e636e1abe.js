@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "0dad03be03f1e7b772f5d8945db7961b",
+    "revision": "c40ba6bdb4114b8322df7cf7efda63de",
     "url": "/react-e-shop-landing/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/react-e-shop-landing/static/css/2.b6cef843.chunk.css"
   },
   {
-    "revision": "f99e5a1045cb507923aa",
+    "revision": "72641f38ab983bc6c6d8",
     "url": "/react-e-shop-landing/static/css/main.b3c89f73.chunk.css"
   },
   {
@@ -16,16 +16,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/react-e-shop-landing/static/js/2.e2622acd.chunk.js"
   },
   {
-    "revision": "f99e5a1045cb507923aa",
-    "url": "/react-e-shop-landing/static/js/main.3e21d94b.chunk.js"
+    "revision": "72641f38ab983bc6c6d8",
+    "url": "/react-e-shop-landing/static/js/main.9dc9f0d0.chunk.js"
   },
   {
     "revision": "80971c8a07f57a341bff",
     "url": "/react-e-shop-landing/static/js/runtime-main.b4996cd6.js"
   },
   {
-    "revision": "f773112892ef9b3ef1e2a871a9b2348f",
-    "url": "/react-e-shop-landing/static/media/background-image.f7731128.png"
+    "revision": "690ab082329ef4facc99fa9013c5aafd",
+    "url": "/react-e-shop-landing/static/media/background-image.690ab082.png"
   },
   {
     "revision": "3c5affab7ef34e707d68661e6dbbfaf5",

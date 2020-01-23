@@ -1,19 +1,19 @@
 {
   "files": {
     "main.css": "/react-e-shop-landing/static/css/main.b3c89f73.chunk.css",
-    "main.js": "/react-e-shop-landing/static/js/main.3e21d94b.chunk.js",
-    "main.js.map": "/react-e-shop-landing/static/js/main.3e21d94b.chunk.js.map",
+    "main.js": "/react-e-shop-landing/static/js/main.9dc9f0d0.chunk.js",
+    "main.js.map": "/react-e-shop-landing/static/js/main.9dc9f0d0.chunk.js.map",
     "runtime-main.js": "/react-e-shop-landing/static/js/runtime-main.b4996cd6.js",
     "runtime-main.js.map": "/react-e-shop-landing/static/js/runtime-main.b4996cd6.js.map",
     "static/css/2.b6cef843.chunk.css": "/react-e-shop-landing/static/css/2.b6cef843.chunk.css",
     "static/js/2.e2622acd.chunk.js": "/react-e-shop-landing/static/js/2.e2622acd.chunk.js",
     "static/js/2.e2622acd.chunk.js.map": "/react-e-shop-landing/static/js/2.e2622acd.chunk.js.map",
     "index.html": "/react-e-shop-landing/index.html",
-    "precache-manifest.5590825e0abc69e6a896b0f41d4c5cba.js": "/react-e-shop-landing/precache-manifest.5590825e0abc69e6a896b0f41d4c5cba.js",
+    "precache-manifest.4af16618e12a98390224338e636e1abe.js": "/react-e-shop-landing/precache-manifest.4af16618e12a98390224338e636e1abe.js",
     "service-worker.js": "/react-e-shop-landing/service-worker.js",
     "static/css/2.b6cef843.chunk.css.map": "/react-e-shop-landing/static/css/2.b6cef843.chunk.css.map",
     "static/css/main.b3c89f73.chunk.css.map": "/react-e-shop-landing/static/css/main.b3c89f73.chunk.css.map",
-    "static/media/background-image.png": "/react-e-shop-landing/static/media/background-image.f7731128.png",
+    "static/media/background-image.png": "/react-e-shop-landing/static/media/background-image.690ab082.png",
     "static/media/brands-and-logotypes.3c5affab.svg": "/react-e-shop-landing/static/media/brands-and-logotypes.3c5affab.svg",
     "static/media/huawei.bfef235d.svg": "/react-e-shop-landing/static/media/huawei.bfef235d.svg",
     "static/media/one-plus.a646b49d.svg": "/react-e-shop-landing/static/media/one-plus.a646b49d.svg",
@@ -25,6 +25,6 @@
     "static/css/2.b6cef843.chunk.css",
     "static/js/2.e2622acd.chunk.js",
     "static/css/main.b3c89f73.chunk.css",
-    "static/js/main.3e21d94b.chunk.js"
+    "static/js/main.9dc9f0d0.chunk.js"
   ]
 }
