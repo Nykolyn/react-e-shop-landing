@@ -24,6 +24,8 @@ const devices = [
   { name: 'oneplus', Icon: <OneplusIcon width={25} height={25} /> },
 ];
 
+const packagePlans = ['Go Postpaid Plans', 'Go Family', 'Go Governorates'];
+
 const Description = styled.p`
   margin: 0;
   margin-bottom: 2em;
@@ -45,6 +47,7 @@ const LoremDescription = () => (
 
 const Packages = ({ getPackages }) => {
   const [activeIcon, setActiveIcon] = useState('all');
+  const [activePlanBtn, setActivePlanBtn] = useState('Go Postpaid Plans');
   useEffect(() => {
     getPackages();
   }, [getPackages]);
@@ -53,9 +56,15 @@ const Packages = ({ getPackages }) => {
       <Title fontWeigth={700}>Go Packages</Title>
       <LoremDescription />
       <StyledButtonGroup>
-        <Button active="true">Go Postpaid Plans</Button>
-        <Button>Go Family</Button>
-        <Button>Go Governorates</Button>
+        {packagePlans.map(plan => (
+          <Button
+            key={plan}
+            active={activePlanBtn === plan ? 'true' : null}
+            onClick={() => setActivePlanBtn(plan)}
+          >
+            {plan}
+          </Button>
+        ))}
       </StyledButtonGroup>
       <Title>Go Postpaid Plans</Title>
       <LoremDescription />
