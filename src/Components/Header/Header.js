@@ -14,7 +14,6 @@ const { Option } = Select;
 
 const StyledSelect = styled(Select)`
   min-width: 80px;
-  text-align: center;
 `;
 
 const selectBeforeOptions = (

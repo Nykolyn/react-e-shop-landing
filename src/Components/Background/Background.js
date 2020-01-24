@@ -6,7 +6,7 @@ import backgroundImg from '../../assets/background-image.png';
 const Background = () => <BackgroundImage src={backgroundImg} />;
 
 const BackgroundImage = styled.img`
-  display: 'block';
+  display: block;
   margin-bottom: 2em;
   width: 100%;
 `;
